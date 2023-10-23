@@ -4,6 +4,10 @@ class Latihan1 extends CI_Controller
     public function index()
     {
         echo "Selamat Datang...... Selamat Belajar Web Programming";
+        $kategori = $this->ModelBuku->getkategori();
+        foreach ($kategori->result() as $kat) {
+            echo $kat->id_kategori .'-'. $kat->nama_kategori . "<br>";
+        }
         //$this->load->view('view-latihan');
     }
     
